@@ -1,15 +1,20 @@
-from data_management import data_management
+from data_management import DataManagement
 
-data_management_obj = data_management
+data_manager = DataManagement()
 
 while True:
-    choice = data_management_obj.select_menu()
+    choice = data_manager.select_menu()
     if choice == '0':
-        import_file = data_management_obj.import_file()
+        data_manager.import_file()
+        
+    elif choice == '1':
+        data_manager.view_all_transactions()
+
+
     elif choice == '14':
         print("Exiting the application.")
         break
-        
-
+    else:
+        print("Invalid option. Please try again.")
 
 
