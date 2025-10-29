@@ -27,3 +27,13 @@ class data_management:
         print('================================')
         choice = input('Choose an option (0-14): ')
         return choice
+
+    def import_file():
+        file_path = input("Enter the path to the file: ")
+        
+        if file_path.endswith('.csv'):
+            pd.read_csv(file_path)
+            print("CSV file imported successfully")
+        else:
+            raise ValueError("Unsupported file format")
+
