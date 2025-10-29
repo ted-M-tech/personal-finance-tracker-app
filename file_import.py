@@ -1,6 +1,6 @@
 import pandas as pd
 
-class FileImporter:
+class FileImport:
     def __init__(self):
         pass
 
@@ -12,5 +12,4 @@ class FileImporter:
             print("CSV file imported successfully")
         else:
             raise ValueError("Unsupported file format")
-        
         
