@@ -47,7 +47,7 @@ class DataManagement:
 
     def view_all_transactions(self):
         print("All Transactions:")
-        print(self.transactions)    
+        print(self.transactions)
 
     def add_transaction(self):
         date = input("Enter the date (YYYY-MM-DD): ")
