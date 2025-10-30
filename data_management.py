@@ -6,7 +6,7 @@ class DataManagement:
         self.file_name = file_name
         if os.path.exists(self.file_name):
             self.transactions = pd.read_csv(self.file_name)
-            self.transactions = self.transactions.sort_values(by="Date")
+            self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
             print(f"Loaded transactions from {self.file_name}")
         else:
             self.transactions = pd.DataFrame(columns=["Date", "Description", "Category", "Type", "Amount"])
@@ -48,6 +48,20 @@ class DataManagement:
     def view_all_transactions(self):
         print("All Transactions:")
         print(self.transactions)
+
+    def delete_transaction(self):
+        transaction_no = input("Enter the transaction number to delete: ")
+        if transaction_no.isdigit():
+            transaction_no = int(transaction_no)
+            if 0 <= transaction_no < len(self.transactions):
+                self.transactions = self.transactions.drop(transaction_no).reset_index(drop=True)
+                # Save changes
+                self.transactions.to_csv(self.file_name, index=False)
+                print(f"Transaction {transaction_no} deleted.")
+            else:
+                print(f"Invalid transaction number: {transaction_no}")
+        else:
+            print("Invalid input. Please enter a valid transaction number.")
 
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
