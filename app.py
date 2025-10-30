@@ -9,7 +9,3 @@ while True:
     elif choice == '14':
         print("Exiting the application.")
         break
-        
-
-
-
