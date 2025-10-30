@@ -1,9 +1,16 @@
 import pandas as pd
+import os
 
 class DataManagement:
-    def __init__(self, file_name="sampledata.csv"):
-        self.transactions = pd.DataFrame()
+    def __init__(self, file_name="transactions.csv"):
         self.file_name = file_name
+        if os.path.exists(self.file_name):
+            self.transactions = pd.read_csv(self.file_name)
+            self.transactions = self.transactions.sort_values(by="Date")
+            print(f"Loaded transactions from {self.file_name}")
+        else:
+            self.transactions = pd.DataFrame(columns=["Date", "Description", "Category", "Type", "Amount"])
+            print("Initialized empty transactions")
 
     def select_menu(self):
         print('\n' *2)
@@ -28,13 +35,9 @@ class DataManagement:
         print('================================')
         choice = input('Choose an option (0-14): ')
         return choice
-    
-#0
+
     def import_file(self):
         file_path = input(f"Enter the path to the CSV file : ")
-        
-        if not file_path:
-            file_path = self.file_name
         if file_path.endswith('.csv'):
             self.transactions = pd.read_csv(file_path)
             print("CSV file imported successfully.")
@@ -42,12 +45,16 @@ class DataManagement:
         else:
             raise ValueError("Unsupported file format")
 
-#1
     def view_all_transactions(self):
         print("All Transactions:")
-        print(self.transactions)
+        print(self.transactions)    
+
     
-#13
     def save_transactions(self):
-        self.transactions.to_csv(self.file_name, index=False)
-        print(f"Transactions saved to {self.file_name}")
+        save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
+
+        if save_filename.endswith('.csv'):
+            self.transactions.to_csv(save_filename, index=False)
+            print(f"Transactions saved to {save_filename}")
+        else:
+            raise ValueError("Unsupported file format")
