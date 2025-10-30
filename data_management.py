@@ -49,6 +49,9 @@ class DataManagement:
         print("All Transactions:")
         print(self.transactions)
 
+    def delete_transaction(self):
+        pass
+
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
 
