@@ -1,10 +1,10 @@
 import pandas as pd
 
-class data_management:
+class DataManagement:
     def __init__(self):
-        pass
+        self.transactions = pd.DataFrame()
 
-    def select_menu():
+    def select_menu(self):
         print('\n' *2)
         print('=== Personal Finance Tracker ===')
         print('''
@@ -28,11 +28,15 @@ class data_management:
         choice = input('Choose an option (0-14): ')
         return choice
 
-    def import_file():
+    def import_file(self):
         file_path = input("Enter the path to the file: ")
-
+        
         if file_path.endswith('.csv'):
-            pd.read_csv(file_path)
+            self.transactions = pd.read_csv(file_path)
             print("CSV file imported successfully")
         else:
             raise ValueError("Unsupported file format")
+
+    def view_all_transactions(self):
+        print("All Transactions:")
+        print(self.transactions)
