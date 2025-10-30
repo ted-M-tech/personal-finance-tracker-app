@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 class DataManagement:
     def __init__(self, file_name="sampledata.csv"):
@@ -28,11 +29,10 @@ class DataManagement:
         print('================================')
         choice = input('Choose an option (0-14): ')
         return choice
-    
-#0
+
     def import_file(self):
         file_path = input(f"Enter the path to the CSV file : ")
-        
+
         if not file_path:
             file_path = self.file_name
         if file_path.endswith('.csv'):
@@ -42,12 +42,11 @@ class DataManagement:
         else:
             raise ValueError("Unsupported file format")
 
-#1
     def view_all_transactions(self):
         print("All Transactions:")
         print(self.transactions)
-    
-#13
+
     def save_transactions(self):
-        self.transactions.to_csv(self.file_name, index=False)
-        print(f"Transactions saved to {self.file_name}")
+        save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
+        self.transactions.to_csv(save_filename, index=False)
+        print(f"Transactions saved to {save_filename}")
