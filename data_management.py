@@ -49,6 +49,33 @@ class DataManagement:
         print("All Transactions:")
         print(self.transactions)    
 
+    def add_transaction(self):
+        date = input("Enter the date (YYYY-MM-DD): ")
+        category = input("Enter the category (e.g, Food, Rent): ")
+        description = input("Enter a description: ")
+        amount = float(input("Enter the amount: "))
+        type = int(input("Enter the type number ([1] Income, [2] Expense): "))
+        if type == 1:
+            type = "Income"
+        elif type == 2:
+            type = "Expense"
+        else:
+            raise ValueError("Invalid type. Please enter 1 for Income or 2 for Expense.")
+        
+        new_transaction = {
+            'Date': date,
+            'Category': category,
+            'Description': description,
+            'Amount': amount,
+            'Type': type
+        }
+
+        self.transactions = pd.concat(
+            [self.transactions, pd.DataFrame([new_transaction])],
+            ignore_index=True
+        )
+        print("Transaction added successfully!")
+
     
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")

@@ -8,6 +8,8 @@ while True:
         data_manager.import_file()
     elif choice == '1':
         data_manager.view_all_transactions()
+    elif choice == '3':
+        data_manager.add_transaction()
     elif choice == '13':
         data_manager.save_transactions()
     elif choice == '14':
