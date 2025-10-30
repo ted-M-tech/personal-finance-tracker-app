@@ -6,6 +6,9 @@ This project is a Python-based interactive, text-based Personal Finance Tracker 
 
 The project emphasizes Python programming, pandas for data handling, and matplotlib for visualization, along with GitHub for collaboration and version control.
 
+## Transaction Data
+Original Data is from Kaggle: https://www.kaggle.com/datasets/tharunprabu/my-expenses-data/data
+
 ## Development Conventions
 
 This project follows a trunk-based development branching model. The `main` branch is the trunk, and all development is done in short-lived feature branches.
