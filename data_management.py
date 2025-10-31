@@ -153,3 +153,9 @@ class DataVisualizer(DataManagement):
         plt.xticks(rotation=45)
         plt.tight_layout()
         plt.show()
+
+    def visualize_distribution_category(self):
+        plt.figure(figsize=(10, 6))
+        category_sums = self.transactions.groupby('Category')['Amount'].sum()
+        plt.pie(category_sums, labels=category_sums.index, autopct='%.0f%%', pctdistance=0.8, startangle=90, title='Distribution of Category')
+        plt.show()

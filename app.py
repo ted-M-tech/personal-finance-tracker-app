@@ -19,6 +19,7 @@ while True:
         data_manager.delete_transaction()
     elif choice == '12':
         data_visualizer.visualize_spending_category()
+        data_visualizer.visualize_distribution_category()
     elif choice == '13':
         data_manager.save_transactions()
     elif choice == '14':
