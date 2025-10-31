@@ -74,6 +74,8 @@ class DataManagement:
             [self.transactions, pd.DataFrame([new_transaction])],
             ignore_index=True
         )
+        # Save changes
+        self.transactions.to_csv(self.file_name, index=False)
         print("Transaction added successfully!")
 
     
