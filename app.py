@@ -1,7 +1,6 @@
 from data_management import DataManagement, DataVisualizer
 
 data_manager = DataManagement()
-data_visualizer = DataVisualizer()
 
 while True:
     choice = data_manager.select_menu()
@@ -14,6 +13,8 @@ while True:
     elif choice == '5':
         data_manager.delete_transaction()
     elif choice == '12':
+        data_visualizer = DataVisualizer()
+        data_visualizer.visualize_monthly_trends()
         data_visualizer.visualize_spending_category()
     elif choice == '13':
         data_manager.save_transactions()

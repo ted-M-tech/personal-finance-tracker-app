@@ -62,7 +62,7 @@ class DataManagement:
             type = "Expense"
         else:
             raise ValueError("Invalid type. Please enter 1 for Income or 2 for Expense.")
-        
+
         new_transaction = {
             'Date': date,
             'Category': category,
@@ -79,7 +79,6 @@ class DataManagement:
         self.transactions.to_csv(self.file_name, index=False)
         print("Transaction added successfully!")
 
-    
     def delete_transaction(self):
         transaction_no = input("Enter the transaction number to delete: ")
         if transaction_no.isdigit():
@@ -106,6 +105,20 @@ class DataManagement:
 class DataVisualizer(DataManagement):
     def __init__(self):
         super().__init__()
+
+    def visualize_monthly_trends(self):
+        plt.figure(figsize=(10, 6))
+        self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
+        self.transactions['Month'] = self.transactions['Date'].dt.strftime('%Y-%m')
+        monthly_income = self.transactions[self.transactions['Type'] == 'Income'].groupby('Month')['Amount'].sum()
+        monthly_expense = self.transactions[self.transactions['Type'] == 'Expense'].groupby('Month')['Amount'].sum()
+        plt.plot(monthly_income.index, monthly_income.values, label='Income', marker='o')
+        plt.plot(monthly_expense.index, monthly_expense.values, label='Expense', marker='o')
+        plt.xlabel('Month')
+        plt.ylabel('Total Amount')
+        plt.title('Monthly Income and Expense Trends')
+        plt.legend()
+        plt.show()
 
     def visualize_spending_category(self):
         plt.figure(figsize=(10, 6))
