@@ -7,6 +7,8 @@ class DataManagement:
         self.file_name = file_name
         if os.path.exists(self.file_name):
             self.transactions = pd.read_csv(self.file_name)
+            # Convert all 'Date' column values to datetime to handle data easily
+            self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
             self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
             print(f"Loaded transactions from {self.file_name}")
         else:
@@ -50,6 +52,17 @@ class DataManagement:
         print("All Transactions:")
         print(self.transactions)
 
+    def view_transactions_by_date_range(self):    
+        start_input = input("Enter start date (YYYY-MM-DD): ")
+        end_input = input("Enter end date (YYYY-MM-DD): ")
+        start = pd.to_datetime(start_input).date()
+        end = pd.to_datetime(end_input).date()
+        filtered = self.transactions[
+            (self.transactions['Date'].dt.date >= start) & (self.transactions['Date'].dt.date <= end)
+            ]
+        print(f"\n--- Transactions from {start_input} to {end_input} ---")
+        print(filtered)
+    
     def add_transaction(self):
         date = input("Enter the date (YYYY-MM-DD): ")
         category = input("Enter the category (e.g, Food, Rent): ")
