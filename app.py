@@ -20,7 +20,7 @@ while True:
     elif choice == '13':
         data_manager.save_transactions()
     elif choice == '14':
-        print("Exiting the application.")
+        print("Exiting the a5pplication.")
         break
     else:
         print("Invalid option. Please try again.")
