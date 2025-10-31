@@ -79,18 +79,42 @@ class DataManagement:
         self.transactions.to_csv(self.file_name, index=False)
         print("Transaction added successfully!")
 
+    def edit_transaction(self):
+        transaction_no = input("Enter the index of the transaction to edit: ")
+        if transaction_no.isdigit() and 0 <= int(transaction_no) < len(self.transactions):
+            print("\nCurrent Transaction Details:")
+            print(self.transactions.iloc[int(transaction_no)])
+
+            new_date = input("\nEnter new date (YYYY-MM-DD) or press Enter to keep current: ")
+            new_description = input("Enter new description or press Enter to keep current: ")
+            new_category = input("Enter new category or press Enter to keep current: ")
+            new_type = input("Enter new type (Income/Expense) or press Enter to keep current: ")
+            new_amount = input("Enter new amount or press Enter to keep current: ")
+
+            if new_date:
+                self.transactions.at[transaction_no, 'Date'] = new_date
+            if new_description:
+                self.transactions.at[transaction_no, 'Description'] = new_description
+            if new_category:
+                self.transactions.at[transaction_no, 'Category'] = new_category
+            if new_type:
+                self.transactions.at[transaction_no, 'Type'] = new_type
+            if new_amount:
+                self.transactions.at[transaction_no, 'Amount'] = float(new_amount)
+            # Save changes
+            self.transactions.to_csv(self.file_name, index=False)
+            print(f"\nTransaction {transaction_no} updated successfully!")
+            
+        else:
+            print("\nInvalid input. Please enter a valid transaction number.")
     
     def delete_transaction(self):
         transaction_no = input("Enter the transaction number to delete: ")
-        if transaction_no.isdigit():
-            transaction_no = int(transaction_no)
-            if 0 <= transaction_no < len(self.transactions):
-                self.transactions = self.transactions.drop(transaction_no).reset_index(drop=True)
-                # Save changes
-                self.transactions.to_csv(self.file_name, index=False)
-                print(f"Transaction {transaction_no} deleted.")
-            else:
-                print(f"Invalid transaction number: {transaction_no}")
+        if transaction_no.isdigit() and 0 <= int(transaction_no) < len(self.transactions):
+            self.transactions = self.transactions.drop(int(transaction_no)).reset_index(drop=True)
+            # Save changes
+            self.transactions.to_csv(self.file_name, index=False)
+            print(f"Transaction {transaction_no} deleted.")
         else:
             print("Invalid input. Please enter a valid transaction number.")
 
