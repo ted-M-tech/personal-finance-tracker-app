@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 
 class DataManagement:
@@ -49,6 +50,36 @@ class DataManagement:
         print("All Transactions:")
         print(self.transactions)
 
+    def add_transaction(self):
+        date = input("Enter the date (YYYY-MM-DD): ")
+        category = input("Enter the category (e.g, Food, Rent): ")
+        description = input("Enter a description: ")
+        amount = float(input("Enter the amount: "))
+        type = int(input("Enter the type number ([1] Income, [2] Expense): "))
+        if type == 1:
+            type = "Income"
+        elif type == 2:
+            type = "Expense"
+        else:
+            raise ValueError("Invalid type. Please enter 1 for Income or 2 for Expense.")
+        
+        new_transaction = {
+            'Date': date,
+            'Category': category,
+            'Description': description,
+            'Amount': amount,
+            'Type': type
+        }
+
+        self.transactions = pd.concat(
+            [self.transactions, pd.DataFrame([new_transaction])],
+            ignore_index=True
+        )
+        # Save changes
+        self.transactions.to_csv(self.file_name, index=False)
+        print("Transaction added successfully!")
+
+    
     def delete_transaction(self):
         transaction_no = input("Enter the transaction number to delete: ")
         if transaction_no.isdigit():
@@ -85,8 +116,22 @@ class DataManagement:
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
 
-        if file_path.endswith('.csv'):
+        if save_filename.endswith('.csv'):
             self.transactions.to_csv(save_filename, index=False)
             print(f"Transactions saved to {save_filename}")
         else:
             raise ValueError("Unsupported file format")
+
+class DataVisualizer(DataManagement):
+    def __init__(self):
+        super().__init__()
+
+    def visualize_spending_category(self):
+        plt.figure(figsize=(10, 6))
+        category_sums = self.transactions[self.transactions['Type'] == 'Expense'].groupby('Category')['Amount'].sum()
+        category_sums.plot(kind='bar', title='Spending by Category')
+        plt.xlabel('Category')
+        plt.ylabel('Total Spending')
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+        plt.show()
