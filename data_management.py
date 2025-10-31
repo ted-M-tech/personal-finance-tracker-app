@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 
 class DataManagement:
@@ -71,3 +72,17 @@ class DataManagement:
             print(f"Transactions saved to {save_filename}")
         else:
             raise ValueError("Unsupported file format")
+
+class DataVisualizer(DataManagement):
+    def __init__(self):
+        super().__init__()
+
+    def visualize_spending_category(self):
+        plt.figure(figsize=(10, 6))
+        category_sums = self.transactions[self.transactions['Type'] == 'Expense'].groupby('Category')['Amount'].sum()
+        category_sums.plot(kind='bar', title='Spending by Category')
+        plt.xlabel('Category')
+        plt.ylabel('Total Spending')
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+        plt.show()
