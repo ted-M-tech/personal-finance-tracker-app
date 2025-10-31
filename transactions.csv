@@ -276,3 +276,86 @@ Date,Category,Description,Amount,Type
 2022-03-01,Food,Dinner,78.0,Expense
 2022-03-02,Other,To lended people,300.0,Expense
 2022-03-02,Food,Brownie,50.0,Expense
+2022-03-04,Food,Lunch with company,155.0,Expense
+2022-03-05,Salary,Salary,8500.0,Income
+2022-03-05,Household,Rent,4800.0,Expense
+2022-03-06,Social Life,Movie with friends,450.0,Expense
+2022-03-07,Food,Dinner,210.0,Expense
+2022-03-09,Transportation,Rapido to office,45.0,Expense
+2022-03-10,Other,Phone bill,499.0,Expense
+2022-03-12,Allowance,From dad,2000.0,Income
+2022-03-14,Food,Groceries,750.0,Expense
+2022-03-15,Food,Team lunch,350.0,Expense
+2022-03-17,Gift,Gift for Preethi,500.0,Expense
+2022-03-20,Food,Sunday brunch,280.0,Expense
+2022-03-22,Transportation,Bus ticket home,800.0,Expense
+2022-03-25,Food,Snacks for travel,150.0,Expense
+2022-03-28,Food,Lunch with family,600.0,Expense
+2022-03-30,Other,From gowdham,150.0,Income
+2022-04-02,Food,Coffee,120.0,Expense
+2022-04-04,Salary,Salary,8500.0,Income
+2022-04-04,Household,Rent,4800.0,Expense
+2022-04-05,Food,Lunch with company,180.0,Expense
+2022-04-07,Apparel,T-shirt,600.0,Expense
+2022-04-10,Food,Ice cream with friends,250.0,Expense
+2022-04-11,Other,Internet Bill,799.0,Expense
+2022-04-15,Allowance,From dad,1500.0,Income
+2022-04-18,Food,Zomato order,320.0,Expense
+2022-04-21,Transportation,Rapido,55.0,Expense
+2022-04-24,Social Life,Bowling,400.0,Expense
+2022-04-25,Petty cash,Cashback,15.0,Income
+2022-04-28,Food,Dinner with Barath,450.0,Expense
+2022-04-30,Food,Party snacks,550.0,Expense
+2022-05-01,Food,Breakfast,80.0,Expense
+2022-05-03,Salary,Salary,8500.0,Income
+2022-05-03,Household,Rent,4800.0,Expense
+2022-05-05,Other,To Kumara,250.0,Expense
+2022-05-08,Gift,Mother's Day Gift,1200.0,Expense
+2022-05-10,Food,Lunch with company,165.0,Expense
+2022-05-12,Allowance,From dad,2500.0,Income
+2022-05-15,Social Life,Concert ticket,1500.0,Expense
+2022-05-18,Transportation,Metro card recharge,300.0,Expense
+2022-05-20,Food,Biryani,280.0,Expense
+2022-05-23,Beauty,Haircut,200.0,Expense
+2022-05-26,Food,Snacks,95.0,Expense
+2022-05-29,Food,Dinner with roommate,380.0,Expense
+2022-06-01,Other,From vicky,200.0,Income
+2022-06-04,Salary,Salary,9000.0,Income
+2022-06-04,Household,Rent,4800.0,Expense
+2022-06-06,Food,Lunch,140.0,Expense
+2022-06-09,Self-development,Udemy Course,499.0,Expense
+2022-06-12,Food,Pizza night,480.0,Expense
+2022-06-15,Transportation,Rapido to pg,50.0,Expense
+2022-06-18,Allowance,From dad,2000.0,Income
+2022-06-21,Food,Groceries,1100.0,Expense
+2022-06-24,Apparel,New Jeans,1599.0,Expense
+2022-06-27,Food,Coffee with Preethi,220.0,Expense
+2022-06-30,Other,To Gobi,500.0,Expense
+2022-07-02,Social Life,Weekend trip setup,1000.0,Expense
+2022-07-04,Salary,Salary,9000.0,Income
+2022-07-04,Household,Rent,4900.0,Expense
+2022-07-05,Transportation,Bus to Ooty,1200.0,Expense
+2022-07-06,Food,Food on trip,800.0,Expense
+2022-07-07,Social Life,Sightseeing,600.0,Expense
+2022-07-08,Transportation,Return bus,1250.0,Expense
+2022-07-11,Food,Lunch with company,170.0,Expense
+2022-07-15,Allowance,From dad,3000.0,Income
+2022-07-19,Food,Dinner,230.0,Expense
+2022-07-22,Other,Electricity Bill,650.0,Expense
+2022-07-25,Transportation,Rapido,60.0,Expense
+2022-07-28,Food,Snacks,120.0,Expense
+2022-07-31,Food,Zomato,350.0,Expense
+2022-08-01,Food,Breakfast,75.0,Expense
+2022-08-03,Salary,Salary,9000.0,Income
+2022-08-03,Household,Rent,4900.0,Expense
+2022-08-06,Social Life,Movie,380.0,Expense
+2022-08-09,Food,Lunch,150.0,Expense
+2022-08-12,Transportation,Train ticket booking,950.0,Expense
+2022-08-15,Food,Independence day lunch,400.0,Expense
+2022-08-17,Allowance,From dad,2000.0,Income
+2022-08-20,Other,Subscription renewal,299.0,Expense
+2022-08-22,Food,Dinner with gowdham,500.0,Expense
+2022-08-25,Apparel,Shoes,2500.0,Expense
+2022-08-28,Transportation,Rapido,48.0,Expense
+2022-08-30,Food,Groceries for month end,850.0,Expense
+2022-08-31,Food,Last day treat,180.0,Expense
