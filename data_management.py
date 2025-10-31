@@ -48,7 +48,7 @@ class DataManagement:
 
     def view_all_transactions(self):
         print("All Transactions:")
-        print(self.transactions)
+        print(self.transactions.to_string(index=True))
 
     def add_transaction(self):
         date = input("Enter the date (YYYY-MM-DD): ")
@@ -62,7 +62,7 @@ class DataManagement:
             type = "Expense"
         else:
             raise ValueError("Invalid type. Please enter 1 for Income or 2 for Expense.")
-        
+
         new_transaction = {
             'Date': date,
             'Category': category,
