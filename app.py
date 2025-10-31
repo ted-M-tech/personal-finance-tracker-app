@@ -1,7 +1,6 @@
 from data_management import DataManagement, DataVisualizer
 
 data_manager = DataManagement()
-data_visualizer = DataVisualizer()
 
 while True:
     choice = data_manager.select_menu()
@@ -20,6 +19,8 @@ while True:
     elif choice == '6':
         data_visualizer.analyze_spending_by_category()
     elif choice == '12':
+        data_visualizer = DataVisualizer()
+        data_visualizer.visualize_monthly_trends()
         data_visualizer.visualize_spending_category()
         data_visualizer.visualize_distribution_category()
     elif choice == '13':
