@@ -53,14 +53,14 @@ class DataManagement:
         print(self.transactions)
 
     def view_transactions_by_date_range(self):    
-        start_input = input("Enter start date (YYYY-MM-DD): ")
-        end_input = input("Enter end date (YYYY-MM-DD): ")
-        start = pd.to_datetime(start_input).date()
-        end = pd.to_datetime(end_input).date()
+        start_date_input = input("Enter start date (YYYY-MM-DD): ")
+        end_date_input = input("Enter end date (YYYY-MM-DD): ")
+        start_date = pd.to_datetime(start_date_input).date()
+        end_date = pd.to_datetime(end_date_input).date()
         filtered = self.transactions[
-            (self.transactions['Date'].dt.date >= start) & (self.transactions['Date'].dt.date <= end)
+            (self.transactions['Date'].dt.date >= start_date) & (self.transactions['Date'].dt.date <= end_date)
             ]
-        print(f"\n--- Transactions from {start_input} to {end_input} ---")
+        print(f"\n--- Transactions from {start_date_input} to {end_date_input} ---")
         print(filtered)
     
     def add_transaction(self):
