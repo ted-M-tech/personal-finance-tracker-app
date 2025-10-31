@@ -63,6 +63,25 @@ class DataManagement:
         else:
             print("Invalid input. Please enter a valid transaction number.")
 
+    def Calculate_Average_Monthly_Spending(self):
+        self.ensure_fresh_data()
+
+        if self.df is None or self.df.empty:
+            print("No data loaded to compute average monthly spending.")
+            return
+
+        df = self.df.copy()
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        df = df.dropna(subset=["date", "Amount"])
+        df["month"] = df["date"].dt.to_period("M")
+        monthly = df.groupby("month")["Amount"].sum()
+        if monthly.empty:
+            print("No monthly data available.")
+            return
+
+        avg = round(monthly.mean(), 2)
+        print(f"Average Monthly Spending: ${avg}")
+    
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
 
