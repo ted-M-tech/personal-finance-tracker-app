@@ -140,6 +140,12 @@ class DataManagement:
         else:
             raise ValueError("Unsupported file format")
 
+    def analyze_spending_by_category(self):
+        category_sums = self.transactions[self.transactions['Type'] == 'Expense'].groupby('Category')['Amount'].sum()
+        top_category_sums = category_sums.sort_values(ascending=False)
+        print("\n--- Total Spending by Category ---")
+        print(top_category_sums)
+
 class DataVisualizer(DataManagement):
     def __init__(self):
         super().__init__()
