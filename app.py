@@ -22,6 +22,7 @@ while True:
         data_visualizer = DataVisualizer()
         data_visualizer.visualize_monthly_trends()
         data_visualizer.visualize_spending_category()
+        data_visualizer.visualize_distribution_category()
     elif choice == '13':
         data_manager.save_transactions()
     elif choice == '14':
