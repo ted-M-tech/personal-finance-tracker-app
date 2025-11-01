@@ -1,7 +1,6 @@
 from data_management import DataManagement, DataVisualizer, BudgetManager
 
 data_manager = DataManagement()
-data_visualizer = DataVisualizer()
 budget_manager = BudgetManager()
 
 while True:

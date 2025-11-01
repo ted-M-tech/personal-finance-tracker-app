@@ -179,20 +179,9 @@ class BudgetManager:
     def __init__(self, filename="category_budgets.csv"):
         self.filename = filename
         if os.path.exists(self.filename):
-            try:
-                df = pd.read_csv(self.filename)
-                if not df.empty and "Category" in df and "Budget" in df:
-                    self.budgets = dict(zip(df["Category"], df["Budget"]))
-                else:
-                    self.budgets = {}
-            except pd.errors.EmptyDataError:
-                self.budgets = {}
-                pd.DataFrame(columns=["Category", "Budget"]).to_csv(self.filename, index=False)
-            print(f"Loaded budgets from {self.filename}")
-        else:
-            self.budgets = {} 
-            pd.DataFrame(columns=["Category", "Budget"]).to_csv(self.filename, index=False)
-            print(f"No budget file found. Starting fresh.")
+            df = pd.read_csv(self.filename)
+            if "Category" in df and "Budget" in df:
+                self.budgets = dict(zip(df["Category"], df["Budget"]))
 
     def set_budgets(self, categories):
         print()
