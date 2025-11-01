@@ -18,10 +18,6 @@ while True:
         data_manager.delete_transaction()
     elif choice == '6':
         data_visualizer.analyze_spending_by_category()
-    elif choice == '7':
-        data_manager.Calculate_Average_Monthly_Spending()
-    elif choice == '8':
-        data_manager.Show_Top_Spending_Category()
     elif choice == '12':
         data_visualizer = DataVisualizer()
         data_visualizer.visualize_monthly_trends()

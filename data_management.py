@@ -132,26 +132,6 @@ class DataManagement:
         else:
             print("Invalid input. Please enter a valid transaction number.")
 
-    def Calculate_Average_Monthly_Spending(self):
-       if self.transactions.empty:
-        print("No transactions available.")
-        return
-       
-       self.transactions['Date'] = pd.to_datetime(self.transactions['Date'], errors='coerce')
-
-       expenses = self.transactions[self.transactions['Type'] == 'Expense']
-
-       if expenses.empty:
-        print("No expense transactions found.")
-        return
-
-       monthly_spending = expenses.groupby(expenses['Date'].dt.to_period('M'))['Amount'].sum()
-
-       average_monthly_spending = monthly_spending.mean()
-
-       print("\n--- Average Monthly Spending ---")
-       print(f"{average_monthly_spending:.2f}")
-
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
 
