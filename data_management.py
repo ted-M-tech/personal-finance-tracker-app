@@ -159,3 +159,47 @@ class DataVisualizer(DataManagement):
         plt.xticks(rotation=45)
         plt.tight_layout()
         plt.show()
+
+class BudgetManager:
+    def __init__(self, filename="category_budgets.csv"):
+        self.filename = filename
+        if os.path.exists(self.filename):
+            try:
+                df = pd.read_csv(self.filename)
+                if not df.empty and "Category" in df and "Budget" in df:
+                    self.budgets = dict(zip(df["Category"], df["Budget"]))
+                else:
+                    self.budgets = {}
+            except pd.errors.EmptyDataError:
+                self.budgets = {}
+                pd.DataFrame(columns=["Category", "Budget"]).to_csv(self.filename, index=False)
+            print(f"Loaded budgets from {self.filename}")
+        else:
+            self.budgets = {} 
+            pd.DataFrame(columns=["Category", "Budget"]).to_csv(self.filename, index=False)
+            print(f"No budget file found. Starting fresh.")
+
+    def set_budgets(self, categories):
+        print()
+        budgets = {}
+        for cat in categories:
+            while True:
+                entry = input(f"Enter your budget for {cat}: ")
+                try:
+                    budgets[cat] = float(entry)
+                    break
+                except ValueError:
+                    print("Please enter a valid number!")
+        print("\nYour budgets have been set:")
+        for cat in categories:
+            print(f"- {cat}: ${budgets[cat]:.2f}")
+        self.budgets = budgets
+        self.save_budgets()
+
+    def save_budgets(self):
+        df = pd.DataFrame([
+            {'Category': cat, 'Budget': budget}
+            for cat, budget in self.budgets.items()
+        ])
+        df.to_csv(self.filename, index=False)
+        print(f"Budgets saved to {self.filename}")    
