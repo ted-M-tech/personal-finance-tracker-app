@@ -24,6 +24,8 @@ while True:
         categories = data_manager.transactions['Category'].unique()
         budget_manager.set_budgets(categories)
     elif choice == '12':
+        data_visualizer = DataVisualizer()
+        data_visualizer.visualize_monthly_trends()
         data_visualizer.visualize_spending_category()
     elif choice == '13':
         data_manager.save_transactions()
