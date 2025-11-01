@@ -175,6 +175,16 @@ class DataVisualizer(DataManagement):
         plt.tight_layout()
         plt.show()
 
+    def visualize_distribution_category(self):
+        plt.figure(figsize=(10, 6))
+        category_sums = self.transactions.groupby('Category')['Amount'].sum().sort_values(ascending=True)
+        plt.title('Distribution of Category')
+        plt.pie(category_sums,  autopct='%.0f%%', pctdistance=0.8, startangle=90)
+        labels_percentage = [f"{cat}: {percentage:.1f}%" for cat, percentage in zip(category_sums.index, (category_sums / category_sums.sum()) * 100)]
+        plt.legend(labels=labels_percentage, title='Categories', bbox_to_anchor=(1.05, 1), loc='upper left')
+        plt.tight_layout()
+        plt.show()
+
 class BudgetManager:
     def __init__(self, filename="category_budgets.csv"):
         self.filename = filename
