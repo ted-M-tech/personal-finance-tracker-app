@@ -10,6 +10,8 @@ while True:
         data_manager.view_all_transactions()
     elif choice == '5':
         data_manager.delete_transaction()
+    elif choice == '8':
+        data_manager.Show_Top_Spending_Category()
     elif choice == '13':
         data_manager.save_transactions()
     elif choice == '14':
