@@ -25,6 +25,7 @@ while True:
         categories = data_manager.transactions['Category'].unique()
         budget_manager.set_budgets(categories)
     elif choice == '12':
+        # Initialize class to reload added transactions while executing application.
         data_visualizer = DataVisualizer()
         data_visualizer.visualize_monthly_trends()
         data_visualizer.visualize_spending_category()
