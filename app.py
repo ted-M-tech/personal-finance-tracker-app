@@ -20,7 +20,7 @@ while True:
     elif choice == '6':
         data_visualizer.analyze_spending_by_category()
     elif choice == '7':
-        data_manager.Calculate_Average_Monthly_Spending()
+        data_manager.calculate_average_monthly_spending()
     elif choice == '10':
         categories = data_manager.transactions['Category'].unique()
         budget_manager.set_budgets(categories)
