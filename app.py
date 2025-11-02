@@ -18,10 +18,13 @@ while True:
     elif choice == '5':
         data_manager.delete_transaction()
     elif choice == '6':
-        data_visualizer.analyze_spending_by_category()
+        data_manager.analyze_spending_by_category()
     elif choice == '10':
         categories = data_manager.transactions['Category'].unique()
         budget_manager.set_budgets(categories)
+    elif choice == '11':
+        actual_spending = data_manager.transactions.groupby("Category")["Amount"].sum().to_dict()
+        budget_manager.check_budget_status(actual_spending)
     elif choice == '12':
         data_visualizer = DataVisualizer()
         data_visualizer.visualize_monthly_trends()
