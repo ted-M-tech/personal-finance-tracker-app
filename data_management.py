@@ -152,6 +152,8 @@ class DataVisualizer(DataManagement):
         super().__init__()
 
     def visualize_monthly_trends(self):
+        # To reload added data while executing application
+        self.__init__()
         plt.figure(figsize=(10, 6))
         self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
         self.transactions['Month'] = self.transactions['Date'].dt.strftime('%Y-%m')
@@ -166,6 +168,8 @@ class DataVisualizer(DataManagement):
         plt.show()
 
     def visualize_spending_category(self):
+        # To reload added data while executing application
+        self.__init__()
         plt.figure(figsize=(10, 6))
         category_sums = self.transactions[self.transactions['Type'] == 'Expense'].groupby('Category')['Amount'].sum()
         category_sums.plot(kind='bar', title='Spending by Category')
@@ -176,6 +180,8 @@ class DataVisualizer(DataManagement):
         plt.show()
 
     def visualize_distribution_category(self):
+        # To reload added data while executing application
+        self.__init__()
         plt.figure(figsize=(10, 6))
         category_sums = self.transactions.groupby('Category')['Amount'].sum().sort_values(ascending=True)
         plt.title('Distribution of Category')
