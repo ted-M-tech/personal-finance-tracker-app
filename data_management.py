@@ -95,24 +95,28 @@ class DataManagement:
             print("Invalid input. Please enter a valid transaction number.")
 
     def Calculate_Average_Monthly_Spending(self):
-       if self.transactions.empty:
+      if self.transactions.empty:
         print("No transactions available.")
         return
-       
-       self.transactions['Date'] = pd.to_datetime(self.transactions['Date'], errors='coerce')
 
-       expenses = self.transactions[self.transactions['Type'] == 'Expense']
+      df = self.transactions.copy()
 
-       if expenses.empty:
+      df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+      df['Type'] = df['Type'].astype(str).str.strip().str.title()
+      df['Amount'] = pd.to_numeric(df['Amount'], errors='coerce')
+      df = df.dropna(subset=['Date', 'Amount'])
+
+      expenses = df[df['Type'] == 'Expense']
+      if expenses.empty:
         print("No expense transactions found.")
         return
+    
+      monthly_spending = expenses.groupby(expenses['Date'].dt.to_period('M'))['Amount'].sum()
+      average_monthly_spending = monthly_spending.mean()
 
-       monthly_spending = expenses.groupby(expenses['Date'].dt.to_period('M'))['Amount'].sum()
+      print("\n--- Average Monthly Spending ---")
+      print(f"{average_monthly_spending:.2f} (based on {len(monthly_spending)} month(s))")
 
-       average_monthly_spending = monthly_spending.mean()
-
-       print("\n--- Average Monthly Spending ---")
-       print(f"{average_monthly_spending:.2f}")
 
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
