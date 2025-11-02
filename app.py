@@ -1,6 +1,7 @@
-from data_management import DataManagement, DataVisualizer
+from data_management import DataManagement, DataVisualizer, BudgetManager
 
 data_manager = DataManagement()
+budget_manager = BudgetManager()
 
 while True:
     choice = data_manager.select_menu()
@@ -20,6 +21,9 @@ while True:
         data_visualizer.analyze_spending_by_category()
     elif choice == '7':
         data_manager.Calculate_Average_Monthly_Spending()
+    elif choice == '10':
+        categories = data_manager.transactions['Category'].unique()
+        budget_manager.set_budgets(categories)
     elif choice == '12':
         data_visualizer = DataVisualizer()
         data_visualizer.visualize_monthly_trends()
