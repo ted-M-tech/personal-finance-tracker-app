@@ -8,7 +8,8 @@ class DataManagement:
         if os.path.exists(self.file_name):
             self.transactions = pd.read_csv(self.file_name)
             # Convert all 'Date' column values to datetime to handle data easily
-            self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
+            self.transactions['Date'] = pd.to_datetime(self.transactions['Date'], errors='coerce')
+            self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
             self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
             print(f"Loaded transactions from {self.file_name}")
         else:
@@ -132,6 +133,13 @@ class DataManagement:
         else:
             print("Invalid input. Please enter a valid transaction number.")
 
+    def calculate_average_monthly_spending(self):
+        expenses = self.transactions[self.transactions['Type'] == 'Expense']
+        monthly_spending = expenses.groupby(expenses['Date'].dt.to_period('M'))['Amount'].sum()
+        average_monthly_spending = monthly_spending.mean()
+        print("\n--- Average Monthly Spending ---")
+        print(f"{average_monthly_spending:.2f} (based on {len(monthly_spending)} month(s))")
+
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
 
@@ -222,4 +230,4 @@ class BudgetManager:
             for cat, budget in self.budgets.items()
         ])
         df.to_csv(self.filename, index=False)
-        print(f"Budgets saved to {self.filename}")    
+        print(f"Budgets saved to {self.filename}")

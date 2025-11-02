@@ -19,6 +19,8 @@ while True:
         data_manager.delete_transaction()
     elif choice == '6':
         data_manager.analyze_spending_by_category()
+    elif choice == '7':
+        data_manager.calculate_average_monthly_spending()
     elif choice == '10':
         categories = data_manager.transactions['Category'].unique()
         budget_manager.set_budgets(categories)
