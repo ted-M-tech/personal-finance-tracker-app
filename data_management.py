@@ -8,6 +8,10 @@ class DataManagement:
         if os.path.exists(self.file_name):
             self.transactions = pd.read_csv(self.file_name)
             # Convert all 'Date' column values to datetime to handle data easily
+            self.transactions['Type'] = self.transactions['Type'].astype(str).str.strip().str.title()
+            self.transactions['Category'] =self.transactions['Category'].astype(str).str.strip()
+            self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
+            self.transactions = self.transactions.dropna(subset=['Amount'])
             self.transactions['Date'] = pd.to_datetime(self.transactions['Date'], errors='coerce')
             self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
             self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
@@ -105,7 +109,7 @@ class DataManagement:
             new_category = input("Enter new category or press Enter to keep current: ")
             new_type = input("Enter new type (Income/Expense) or press Enter to keep current: ")
             new_amount = input("Enter new amount or press Enter to keep current: ")
-
+         
             if new_date:
                 self.transactions.at[transaction_no, 'Date'] = new_date
             if new_description:
@@ -153,6 +157,12 @@ class DataManagement:
         top_category_sums = category_sums.sort_values(ascending=False)
         print("\n--- Total Spending by Category ---")
         print(top_category_sums)
+
+    def show_top_spending_category(self):
+        expenses = self.transactions[self.transactions['Type'] == 'Expense']
+        by_cat = expenses.groupby('Category')['Amount'].sum().sort_values(ascending=False)
+        print("\n--- Top Spending Category ---")
+        print(f"{by_cat.index[0]} with {by_cat.iloc[0]:.2f} total spending.")
 
 class DataVisualizer(DataManagement):
     def __init__(self):
