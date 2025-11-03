@@ -13,6 +13,8 @@ class DataManagement:
             self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
             self.transactions = self.transactions.dropna(subset=['Amount'])
             self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
+            self.transactions['Date'] = pd.to_datetime(self.transactions['Date'], errors='coerce')
+            self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
             self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
             print(f"Loaded transactions from {self.file_name}")
         else:
@@ -56,7 +58,7 @@ class DataManagement:
         print("All Transactions:")
         print(self.transactions.to_string(index=True))
 
-    def view_transactions_by_date_range(self):    
+    def view_transactions_by_date_range(self):
         start_date_input = input("Enter start date (YYYY-MM-DD): ")
         end_date_input = input("Enter end date (YYYY-MM-DD): ")
         start_date = pd.to_datetime(start_date_input).date()
@@ -66,9 +68,9 @@ class DataManagement:
             ]
         print(f"\n--- Transactions from {start_date_input} to {end_date_input} ---")
         print(filtered)
-    
+
     def add_transaction(self):
-        date = input("Enter the date (YYYY-MM-DD): ")
+        date = pd.to_datetime(input("Enter the date (YYYY-MM-DD): "))
         category = input("Enter the category (e.g, Food, Rent): ")
         description = input("Enter a description: ")
         amount = float(input("Enter the amount: "))
@@ -122,10 +124,9 @@ class DataManagement:
             # Save changes
             self.transactions.to_csv(self.file_name, index=False)
             print(f"\nTransaction {transaction_no} updated successfully!")
-            
         else:
             print("\nInvalid input. Please enter a valid transaction number.")
-    
+
     def delete_transaction(self):
         transaction_no = input("Enter the transaction number to delete: ")
         if transaction_no.isdigit() and 0 <= int(transaction_no) < len(self.transactions):
@@ -135,6 +136,13 @@ class DataManagement:
             print(f"Transaction {transaction_no} deleted.")
         else:
             print("Invalid input. Please enter a valid transaction number.")
+
+    def calculate_average_monthly_spending(self):
+        expenses = self.transactions[self.transactions['Type'] == 'Expense']
+        monthly_spending = expenses.groupby(expenses['Date'].dt.to_period('M'))['Amount'].sum()
+        average_monthly_spending = monthly_spending.mean()
+        print("\n--- Average Monthly Spending ---")
+        print(f"{average_monthly_spending:.2f} (based on {len(monthly_spending)} month(s))")
 
     def save_transactions(self):
         save_filename = input("Enter the filename to save (e.g., 'transaction.csv'): ")
@@ -226,4 +234,4 @@ class BudgetManager:
             for cat, budget in self.budgets.items()
         ])
         df.to_csv(self.filename, index=False)
-        print(f"Budgets saved to {self.filename}")    
+        print(f"Budgets saved to {self.filename}")

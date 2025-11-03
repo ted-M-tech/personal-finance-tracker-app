@@ -19,12 +19,15 @@ while True:
         data_manager.delete_transaction()
     elif choice == '6':
         data_visualizer.analyze_spending_by_category()
+    elif choice == '7':
+        data_manager.calculate_average_monthly_spending()
     elif choice == '8':
         data_manager.show_top_spending_category()
     elif choice == '10':
         categories = data_manager.transactions['Category'].unique()
         budget_manager.set_budgets(categories)
     elif choice == '12':
+        # Initialize class to reload added transactions while executing application.
         data_visualizer = DataVisualizer()
         data_visualizer.visualize_monthly_trends()
         data_visualizer.visualize_spending_category()
