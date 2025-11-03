@@ -12,7 +12,6 @@ class DataManagement:
             self.transactions['Category'] =self.transactions['Category'].astype(str).str.strip()
             self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
             self.transactions = self.transactions.dropna(subset=['Amount'])
-            self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
             self.transactions['Date'] = pd.to_datetime(self.transactions['Date'], errors='coerce')
             self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
             self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
