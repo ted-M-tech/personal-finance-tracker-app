@@ -8,6 +8,10 @@ class DataManagement:
         if os.path.exists(self.file_name):
             self.transactions = pd.read_csv(self.file_name)
             # Convert all 'Date' column values to datetime to handle data easily
+            self.transactions['Type'] = self.transactions['Type'].astype(str).str.strip().str.title()
+            self.transactions['Category'] =self.transactions['Category'].astype(str).str.strip()
+            self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
+            self.transactions = self.transactions.dropna(subset=['Amount'])
             self.transactions['Date'] = pd.to_datetime(self.transactions['Date'])
             self.transactions = self.transactions.sort_values(by="Date").reset_index(drop=True)
             print(f"Loaded transactions from {self.file_name}")
@@ -147,16 +151,9 @@ class DataManagement:
         print("\n--- Total Spending by Category ---")
         print(top_category_sums)
 
-    def Show_Top_Spending_Category(self):
-        self.transactions['Type'] = self.transactions['Type'].astype(str).str.strip().str.title()
-        self.transactions['Category'] =self.transactions['Category'].astype(str).str.strip()
-        self.transactions['Amount'] = pd.to_numeric(self.transactions['Amount'], errors='coerce')
-        self.transactions = self.transactions.dropna(subset=['Amount'])
-
+    def show_top_spending_category(self):
         expenses = self.transactions[self.transactions['Type'] == 'Expense']
-
         by_cat = expenses.groupby('Category')['Amount'].sum().sort_values(ascending=False)
-
         print("\n--- Top Spending Category ---")
         print(f"{by_cat.index[0]} with {by_cat.iloc[0]:.2f} total spending.")
 
