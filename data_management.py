@@ -53,7 +53,7 @@ class DataManagement:
         print("All Transactions:")
         print(self.transactions.to_string(index=True))
 
-    def view_transactions_by_date_range(self):    
+    def view_transactions_by_date_range(self):
         start_date_input = input("Enter start date (YYYY-MM-DD): ")
         end_date_input = input("Enter end date (YYYY-MM-DD): ")
         start_date = pd.to_datetime(start_date_input).date()
@@ -63,7 +63,7 @@ class DataManagement:
             ]
         print(f"\n--- Transactions from {start_date_input} to {end_date_input} ---")
         print(filtered)
-    
+
     def add_transaction(self):
         date = pd.to_datetime(input("Enter the date (YYYY-MM-DD): "))
         category = input("Enter the category (e.g, Food, Rent): ")
@@ -119,10 +119,9 @@ class DataManagement:
             # Save changes
             self.transactions.to_csv(self.file_name, index=False)
             print(f"\nTransaction {transaction_no} updated successfully!")
-            
         else:
             print("\nInvalid input. Please enter a valid transaction number.")
-    
+
     def delete_transaction(self):
         transaction_no = input("Enter the transaction number to delete: ")
         if transaction_no.isdigit() and 0 <= int(transaction_no) < len(self.transactions):
