@@ -18,7 +18,7 @@ while True:
     elif choice == '5':
         data_manager.delete_transaction()
     elif choice == '6':
-        data_visualizer.analyze_spending_by_category()
+        data_manager.analyze_spending_by_category()
     elif choice == '7':
         data_manager.calculate_average_monthly_spending()
     elif choice == '8':
