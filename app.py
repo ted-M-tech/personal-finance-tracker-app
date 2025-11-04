@@ -21,6 +21,8 @@ while True:
         data_manager.analyze_spending_by_category()
     elif choice == '7':
         data_manager.calculate_average_monthly_spending()
+    elif choice == '8':
+        data_manager.show_top_spending_category()
     elif choice == '10':
         budget_manager.set_budgets()
     elif choice == '11':
