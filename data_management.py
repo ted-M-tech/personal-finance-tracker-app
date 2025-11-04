@@ -201,13 +201,12 @@ class BudgetManager(DataManagement):
             self.budgets = pd.read_csv(self.file_name)
             print(f"Loaded transactions from {self.file_name}")
         else:
-            df_empty = pd.DataFrame(columns=["Category", "Month", "Budget"])
+            df_empty = pd.DataFrame(columns=["Category", "Budget"])
             df_empty.to_csv(self.budget_file, index=False)
             print("Initialized empty budgets")
 
     def set_budgets(self):
-        print("\n--- Set budget for a single month and category ---")
-        month = input("Enter the month to set the budget for (yyyy-mm): ")      
+        print("\n--- Set budget for a single month and category ---")      
         categories = self.transactions[self.transactions["Type"] != "Income"]["Category"].unique()
         budgets = {}
         for cat in categories:
@@ -218,23 +217,23 @@ class BudgetManager(DataManagement):
                     break
                 except ValueError:
                     print("Please enter a valid number!")
-        print("\nYour budgets have been set:")
-        for cat in categories:
-            budget = self.budgets[cat][month]
-            print(f"- {cat} ({month}): ${budget:.2f}")
         self.budgets = budgets
         self.save_budgets()
+        print("\nYour budgets have been set:")
+        for cat in categories:
+            budget = self.budgets[cat]
+            print(f"- {cat} : ${budget:.2f}")
+        
 
     def save_budgets(self):
         rows = []
-        for cat, months in self.budgets.items():
-            for month, budget in months.items():
-                rows.append({'Category': cat, 'Month': month, 'Budget': budget})
+        for cat, budget in self.budgets.items():   
+            rows.append({'Category': cat, 'Budget': budget})
         df = pd.DataFrame(rows)
         df.to_csv(self.budget_file, index=False)
         print(f"Budgets saved to {self.budget_file}")
  
-    def check_budget_status(self, actual_spending):
+    def check_budget_status(self):
         month = str(input("Enter month to check (yyyy-mm): "))
         df_month = self.transactions[self.transactions['Date'].dt.strftime('%Y-%m') == month]
         actual_spending = df_month.groupby("Category")["Amount"].sum().to_dict()
@@ -265,4 +264,4 @@ class BudgetManager(DataManagement):
             if warning_cat:
                 print(f"- Monitor your spending for: {', '.join(warning_cat)} to avoid exceeding the budget.")
             if not alerts_cat and not warning_cat:
-                print("- You are within budget for all categories. Keep up the good work!")
+                print("- You are within budget for other categories. Keep up the good work!")
