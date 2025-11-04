@@ -19,75 +19,75 @@ Date,Category,Description,Amount,Type
 2021-11-26,Food,Breakfast,60.0,Expense
 2021-11-26,Food,Beer,150.0,Expense
 2021-11-26,Food,Snack,102.0,Expense
-2021-11-27,Allowance,From dad,2000.0,Income
-2021-11-27,Food,Lunch with company,75.0,Expense
-2021-11-27,Transportation,Rapido,35.0,Expense
-2021-11-27,Food,Dinner with gowdham,130.0,Expense
-2021-11-27,Food,Dinner with gowdham,120.0,Expense
 2021-11-27,Food,Breakfast,30.0,Expense
+2021-11-27,Food,Dinner with gowdham,120.0,Expense
+2021-11-27,Food,Dinner with gowdham,130.0,Expense
+2021-11-27,Allowance,From dad,2000.0,Income
+2021-11-27,Transportation,Rapido,35.0,Expense
+2021-11-27,Food,Lunch with company,75.0,Expense
 2021-11-28,Food,Zomato,269.4,Expense
 2021-11-28,Food,Snack,94.0,Expense
 2021-11-29,Food,Breakfast,40.0,Expense
 2021-11-29,Food,Panipoori,40.0,Expense
 2021-11-29,Food,Dinner,50.0,Expense
 2021-11-29,Food,Lunch with company,40.0,Expense
-2021-11-30,Food,Breakfast,70.0,Expense
 2021-11-30,Food,Lunch with company,128.0,Expense
 2021-11-30,Gift,Bharath birthday,115.0,Expense
+2021-11-30,Food,Breakfast,70.0,Expense
 2021-12-01,Food,Lunch with company,160.0,Expense
 2021-12-01,Beauty,Showergel,196.0,Expense
 2021-12-02,Food,Vadapaav,75.0,Expense
 2021-12-02,Food,Ice cream,504.0,Expense
-2021-12-03,Food,Snack,40.0,Expense
-2021-12-03,Allowance,From dad,1000.0,Income
+2021-12-03,Food,Milk with bharath,25.0,Expense
 2021-12-03,Apparel,Belt,130.0,Expense
 2021-12-03,Apparel,Mask,20.0,Expense
-2021-12-03,Food,Milk with bharath,25.0,Expense
-2021-12-04,Food,Breakfast,200.0,Expense
+2021-12-03,Allowance,From dad,1000.0,Income
+2021-12-03,Food,Snack,40.0,Expense
 2021-12-04,Other,For company,30.0,Expense
-2021-12-04,Food,Snack,65.0,Expense
+2021-12-04,Food,Breakfast,200.0,Expense
 2021-12-04,Food,Dinner,324.0,Expense
+2021-12-04,Food,Snack,65.0,Expense
 2021-12-05,Allowance,From dad,8000.0,Income
 2021-12-05,Household,Rent,4800.0,Expense
 2021-12-05,Food,Milk with bharath,25.0,Expense
 2021-12-05,Apparel,Full hand and a hoodie,1800.0,Expense
+2021-12-06,Food,Milk with bharath,25.0,Expense
+2021-12-06,Apparel,Cap,140.0,Expense
 2021-12-06,Food,Lunch with stu,150.0,Expense
 2021-12-06,Apparel,Shoe,500.0,Expense
-2021-12-06,Apparel,Cap,140.0,Expense
-2021-12-06,Food,Milk with bharath,25.0,Expense
 2021-12-07,Food,Horlicks,15.0,Expense
 2021-12-07,Food,Milk with bharath,25.0,Expense
 2021-12-08,Food,Lunch with stu,100.0,Expense
 2021-12-08,Food,Milk,10.0,Expense
 2021-12-08,Food,5 star,15.0,Expense
+2021-12-09,Food,Milk with bharath,25.0,Expense
+2021-12-09,Food,Breakfast with stu,110.0,Expense
 2021-12-09,Food,Lunch with company,280.0,Expense
 2021-12-09,Food,Snack with bharath,40.0,Expense
-2021-12-09,Food,Breakfast with stu,110.0,Expense
-2021-12-09,Food,Milk with bharath,25.0,Expense
 2021-12-10,Food,Momos,195.0,Expense
 2021-12-10,Food,Shopping,241.0,Expense
 2021-12-11,Allowance,From dad,1000.0,Income
 2021-12-11,Other,From stu,240.0,Income
 2021-12-12,Food,Milk with bharath,25.0,Expense
+2021-12-14,Food,Panipoori,80.0,Expense
 2021-12-14,Food,Snacks,74.0,Expense
 2021-12-14,Food,Milk with bharath,65.0,Expense
-2021-12-14,Food,Panipoori,80.0,Expense
 2021-12-14,Food,Snacks,75.0,Expense
 2021-12-14,Food,Lunch,40.0,Expense
 2021-12-16,Food,Panipoori,20.0,Expense
 2021-12-16,Food,Milk with bharath,110.0,Expense
 2021-12-16,Food,Egg,30.0,Expense
 2021-12-16,Food,Lunch,30.0,Expense
-2021-12-17,Food,Lunch with company,110.0,Expense
 2021-12-17,Food,Milk with bharath,70.0,Expense
+2021-12-17,Food,Lunch with company,110.0,Expense
 2021-12-17,Other,Gave to gowdham,50.0,Expense
-2021-12-18,Allowance,From dad,1000.0,Income
-2021-12-18,Food,To rahul,113.0,Expense
-2021-12-18,Other,To kumara,100.0,Expense
-2021-12-18,Social Life,Spiderman ,363.72,Expense
 2021-12-18,Food,Lunch,160.0,Expense
 2021-12-18,Other,Lended money,400.0,Income
+2021-12-18,Social Life,Spiderman ,363.72,Expense
 2021-12-18,Other,To abijith,200.0,Expense
+2021-12-18,Food,To rahul,113.0,Expense
+2021-12-18,Other,To kumara,100.0,Expense
+2021-12-18,Allowance,From dad,1000.0,Income
 2021-12-19,Other,To siva,100.0,Expense
 2021-12-20,Food,Milk with bharath,40.0,Expense
 2021-12-20,Food,Milk with bharath,80.0,Expense
@@ -98,64 +98,64 @@ Date,Category,Description,Amount,Type
 2021-12-21,Food,Puffs,25.0,Expense
 2021-12-21,Food,Bun,18.0,Expense
 2021-12-21,Food,Dinner with barath,239.0,Expense
-2021-12-23,Food,Lemon tea with company,15.0,Expense
 2021-12-23,Food,Puffs and coffee,32.0,Expense
+2021-12-23,Food,Lemon tea with company,15.0,Expense
 2021-12-24,Social Life,Beer,150.0,Expense
 2021-12-24,Food,Lunch with company,262.0,Expense
-2021-12-25,Food,Milk with bharath,40.0,Expense
-2021-12-25,Food,Water,30.0,Expense
-2021-12-25,Food,Corn,30.0,Expense
-2021-12-25,Self-development,Books,400.0,Expense
 2021-12-25,Food,Dinner with barath,504.0,Expense
+2021-12-25,Self-development,Books,400.0,Expense
 2021-12-25,Transportation,Cab,306.0,Expense
+2021-12-25,Food,Water,30.0,Expense
+2021-12-25,Food,Milk with bharath,40.0,Expense
+2021-12-25,Food,Corn,30.0,Expense
+2021-12-27,Food,Lunch with barath,115.0,Expense
+2021-12-27,Other,From vicky,80.0,Income
 2021-12-27,Food,Coconut water with stu,50.0,Expense
 2021-12-27,Other,From ganesan,40.0,Income
-2021-12-27,Other,From vicky,80.0,Income
-2021-12-27,Food,Lunch with barath,115.0,Expense
 2021-12-28,Food,Coffee and thattai,14.0,Expense
-2021-12-30,Other,From kumara,30.0,Income
-2021-12-30,Food,Horlicks + kolakattai,25.0,Expense
-2021-12-30,Transportation,Bommasandra to pg,199.0,Expense
-2021-12-30,Other,From Deepak,250.0,Income
-2021-12-30,Other,From abi,20.0,Income
-2021-12-30,Food,Water,20.0,Expense
 2021-12-30,Transportation,Rapido + toll,286.0,Expense
 2021-12-30,Other,From Deepak,250.0,Income
 2021-12-30,Food,To barath,20.0,Expense
+2021-12-30,Food,Water,20.0,Expense
 2021-12-30,Transportation,Pg to office,43.0,Expense
+2021-12-30,Other,From Deepak,250.0,Income
+2021-12-30,Transportation,Bommasandra to pg,199.0,Expense
+2021-12-30,Other,From kumara,30.0,Income
+2021-12-30,Other,From abi,20.0,Income
+2021-12-30,Food,Horlicks + kolakattai,25.0,Expense
 2022-01-01,Allowance,From dad,1000.0,Income
 2022-01-01,Food,Snacks,85.0,Expense
-2022-01-02,Other,Tablet to gowdham,8.0,Expense
 2022-01-02,Transportation,Train to vnr,725.0,Expense
+2022-01-02,Other,Tablet to gowdham,8.0,Expense
 2022-01-02,Food,Dinner with barath,200.0,Expense
-2022-01-03,Other,From gpay,5.0,Income
-2022-01-03,Other,From shakur,140.0,Income
-2022-01-03,Food,Lunch unlimited nv,300.0,Expense
-2022-01-03,Other,From abi,300.0,Income
-2022-01-03,Food,Dairy milk,10.0,Expense
 2022-01-03,Other,From barath,201.0,Income
+2022-01-03,Food,Dairy milk,10.0,Expense
+2022-01-03,Other,From abi,300.0,Income
+2022-01-03,Food,Lunch unlimited nv,300.0,Expense
+2022-01-03,Other,From shakur,140.0,Income
+2022-01-03,Other,From gpay,5.0,Income
 2022-01-04,Education,Arrear and reval fee,1400.0,Expense
 2022-01-04,Food,Lunch with company,106.0,Expense
 2022-01-04,Salary,Salary,8000.0,Income
 2022-01-04,Food,Sent to preethi,107.0,Expense
 2022-01-04,Other,To vicky,80.0,Expense
-2022-01-05,Other,Lended money returned to vishnu,40.0,Expense
-2022-01-05,Other,Lended money returned to kumara,30.0,Expense
-2022-01-05,Transportation,Refund for bus ticket,60.0,Expense
-2022-01-05,Food,McDonald's with company,211.0,Expense
 2022-01-05,Other,To gobi 1st 1/4th,500.0,Expense
-2022-01-05,Food,Jan 2nd with shakur and barath,354.0,Expense
-2022-01-05,Food,Lunch with company,388.0,Expense
 2022-01-05,Other,To abijith and to vicky lend money returned,500.0,Expense
+2022-01-05,Food,Lunch with company,388.0,Expense
+2022-01-05,Food,Jan 2nd with shakur and barath,354.0,Expense
+2022-01-05,Other,Lended money returned to kumara,30.0,Expense
+2022-01-05,Other,Lended money returned to vishnu,40.0,Expense
+2022-01-05,Food,McDonald's with company,211.0,Expense
+2022-01-05,Transportation,Refund for bus ticket,60.0,Expense
 2022-01-06,Transportation,Rapido to pg,42.0,Expense
 2022-01-06,Food,Bingo,10.0,Expense
 2022-01-06,Food,Dinner with roommate,877.81,Expense
 2022-01-06,Food,Ketch up,20.0,Expense
 2022-01-06,Other,From barath and shakur,440.0,Income
 2022-01-07,Food,Coffee + biscuit,15.0,Expense
+2022-01-08,Household,Rent,4580.0,Expense
 2022-01-08,Other,From gowdham,260.0,Income
 2022-01-08,Food,Lunch with gowdham,535.3,Expense
-2022-01-08,Household,Rent,4580.0,Expense
 2022-01-10,Food,Friday snacks with preethi gang,106.0,Expense
 2022-01-11,Food,Lunch with not preethi,135.5,Expense
 2022-01-12,Other,Recharge by gowdham,479.0,Expense
@@ -164,33 +164,33 @@ Date,Category,Description,Amount,Type
 2022-01-13,Food,Dinner,66.0,Expense
 2022-01-13,Transportation,Rapido to pg,43.0,Expense
 2022-01-13,Other,From dad,1000.0,Income
-2022-01-14,Other,From gowdham,340.0,Income
-2022-01-14,Food,Lunch pongal,1530.0,Expense
 2022-01-14,Other,Dinesh and maddy + 100 cash,240.0,Income
-2022-01-14,Other,Gundan + prasanna,340.0,Income
-2022-01-14,Other,Kumara,170.0,Income
+2022-01-14,Other,From gowdham,340.0,Income
 2022-01-14,Other,Siva + 100 cash,70.0,Income
+2022-01-14,Other,Kumara,170.0,Income
+2022-01-14,Other,Gundan + prasanna,340.0,Income
+2022-01-14,Food,Lunch pongal,1530.0,Expense
+2022-01-15,Food,Snacks,70.0,Expense
 2022-01-15,Other,From dad,1500.0,Income
 2022-01-15,Transportation,Bus to Bangalore,1365.0,Expense
-2022-01-15,Food,Snacks,70.0,Expense
 2022-01-17,Food,Eve snack,100.0,Expense
+2022-01-18,Other,From dad,1000.0,Income
+2022-01-18,Other,To kumara,200.0,Expense
+2022-01-18,Food,Snack with preethi,59.0,Expense
 2022-01-18,Food,Lunch with company,148.0,Expense
 2022-01-18,Food,Dinner,301.15,Expense
-2022-01-18,Other,To kumara,200.0,Expense
-2022-01-18,Other,From dad,1000.0,Income
-2022-01-18,Food,Snack with preethi,59.0,Expense
 2022-01-19,Food,Lunch + chocolate for preethi,171.0,Expense
 2022-01-21,Food,Snacks,37.0,Expense
 2022-01-21,Other,From vicky,200.0,Income
 2022-01-21,Food,Lunch with company,188.0,Expense
-2022-01-23,Food,Snacks with preethi and azar,176.0,Expense
-2022-01-23,Other,From dad,2000.0,Income
-2022-01-23,Food,Lunch,302.0,Expense
-2022-01-23,Food,Sent to vicky,300.0,Expense
-2022-01-23,Other,From vicky,310.0,Income
-2022-01-23,Food,Dinner,465.0,Expense
 2022-01-23,Food,Pepsi,40.0,Expense
+2022-01-23,Food,Dinner,465.0,Expense
+2022-01-23,Other,From vicky,310.0,Income
 2022-01-23,Social Life,Badminton,200.0,Expense
+2022-01-23,Food,Lunch,302.0,Expense
+2022-01-23,Other,From dad,2000.0,Income
+2022-01-23,Food,Snacks with preethi and azar,176.0,Expense
+2022-01-23,Food,Sent to vicky,300.0,Expense
 2022-01-24,Food,Lunch with company,133.0,Expense
 2022-01-24,Food,Snack,40.0,Expense
 2022-01-25,Food,Lemon tea,18.0,Expense
@@ -199,19 +199,19 @@ Date,Category,Description,Amount,Type
 2022-01-26,Food,Snacks,115.0,Expense
 2022-01-26,Other,Vishnu 100 gowdham 25,125.0,Income
 2022-01-26,Food,Paani poori,25.0,Expense
-2022-01-27,Transportation,Rapido to pg,43.0,Expense
-2022-01-27,Other,From dad,1500.0,Income
-2022-01-27,Other,From vicky,300.0,Income
 2022-01-27,Food,Zinger box meal,279.0,Expense
 2022-01-27,Other,To vishnu,100.0,Expense
 2022-01-27,Other,To vicky,300.0,Expense
+2022-01-27,Other,From dad,1500.0,Income
+2022-01-27,Other,From vicky,300.0,Income
+2022-01-27,Transportation,Rapido to pg,43.0,Expense
 2022-01-28,Food,Lunch with company,138.0,Expense
 2022-01-28,Food,Banana,10.0,Expense
 2022-01-29,Other,Sent to barath,100.0,Expense
 2022-01-29,Transportation,Rapido to pg,44.0,Expense
+2022-01-30,Food,Dinner,155.0,Expense
 2022-01-30,Food,Brunch,105.0,Expense
 2022-01-30,Food,Cycle gap ,120.0,Expense
-2022-01-30,Food,Dinner,155.0,Expense
 2022-01-31,Transportation,To ksr station,153.0,Expense
 2022-01-31,Other,To vicky,200.0,Expense
 2022-01-31,Transportation,Vnr to apk,50.0,Expense
@@ -220,60 +220,60 @@ Date,Category,Description,Amount,Type
 2022-02-03,Other,To gowdham,150.0,Expense
 2022-02-03,Food,Good soup,50.0,Expense
 2022-02-04,Food,Shawarma,80.0,Expense
+2022-02-06,Transportation,To chennai,1000.0,Expense
+2022-02-06,Food,To kumara,150.0,Expense
+2022-02-06,Other,Salary from dad,5000.0,Income
 2022-02-06,Food,Cakepark,125.0,Expense
 2022-02-06,Other,To gobi,1500.0,Expense
-2022-02-06,Other,Salary from dad,5000.0,Income
-2022-02-06,Food,To kumara,150.0,Expense
-2022-02-06,Transportation,To chennai,1000.0,Expense
 2022-02-07,Transportation,Auto to Gobi's place,214.0,Expense
 2022-02-08,Household,Bean bag,2099.0,Expense
 2022-02-08,Other,From dad,1000.0,Income
 2022-02-10,Food,Kfc dinner,641.0,Expense
 2022-02-11,Food,Dinner with aravind,373.0,Expense
-2022-02-12,Household,Mirror,70.0,Expense
-2022-02-12,Other,From dad,10000.0,Income
-2022-02-12,Food,Dinner with aravind and buddies,491.0,Expense
 2022-02-12,Food,Lunch,80.0,Expense
+2022-02-12,Food,Dinner with aravind and buddies,491.0,Expense
+2022-02-12,Other,From dad,10000.0,Income
+2022-02-12,Household,Mirror,70.0,Expense
 2022-02-13,Social Life,Games ,100.0,Expense
 2022-02-16,Food,Side dishes,165.0,Expense
 2022-02-16,Food,Kfc ,475.0,Expense
 2022-02-17,Food,Lunch,80.0,Expense
 2022-02-18,Food,Kfc dinner,348.0,Expense
-2022-02-19,Transportation,Took from sbi,200.0,Expense
-2022-02-19,Transportation,Bus ticket,1575.0,Expense
-2022-02-19,Food,Snacks,250.0,Expense
-2022-02-19,Food,Random stuff for drinks,111.0,Expense
+2022-02-19,Food,Ramen with gobi,380.0,Expense
+2022-02-19,Transportation,Metro,60.0,Expense
 2022-02-19,Transportation,To egmore,270.0,Expense
 2022-02-19,Other,To auto anna,50.0,Expense
-2022-02-19,Transportation,Metro,60.0,Expense
-2022-02-19,Food,Ramen with gobi,380.0,Expense
+2022-02-19,Food,Snacks,250.0,Expense
+2022-02-19,Transportation,Bus ticket,1575.0,Expense
+2022-02-19,Transportation,Took from sbi,200.0,Expense
+2022-02-19,Food,Random stuff for drinks,111.0,Expense
 2022-02-20,Food,Lunch,200.0,Expense
-2022-02-21,Transportation,Train cbe to chn,201.8,Expense
 2022-02-21,Household,Stuffs,336.0,Expense
-2022-02-21,Transportation,Travel to koyambedu,138.0,Expense
+2022-02-21,Transportation,Train cbe to chn,201.8,Expense
 2022-02-21,Transportation,It better be worth it,1300.0,Expense
+2022-02-21,Transportation,Travel to koyambedu,138.0,Expense
 2022-02-22,Transportation,Auto to laxmi mills,120.0,Expense
-2022-02-23,Apparel,Earphone,399.0,Expense
 2022-02-23,Food,Eggs,83.0,Expense
 2022-02-23,Apparel,Hoodie for gobi,399.0,Expense
+2022-02-23,Apparel,Earphone,399.0,Expense
 2022-02-24,Food,Tamen,324.7,Expense
 2022-02-24,Household,,303.0,Expense
 2022-02-24,Food,Creamstone,289.0,Expense
 2022-02-25,Food,,33.0,Expense
-2022-02-26,Social Life,,1700.0,Expense
-2022-02-26,Food,,25.0,Expense
 2022-02-26,Food,Tea lights,84.0,Expense
-2022-02-26,Other,From dad,1500.0,Income
-2022-02-26,Food,Snacks,40.0,Expense
+2022-02-26,Food,,25.0,Expense
+2022-02-26,Social Life,,1700.0,Expense
 2022-02-26,Other,To karthi,100.0,Expense
+2022-02-26,Food,Snacks,40.0,Expense
+2022-02-26,Other,From dad,1500.0,Income
 2022-02-27,Food,Lunch,243.0,Expense
-2022-02-28,Other,From kumara,200.0,Income
 2022-02-28,Food,Pizza,339.15,Expense
-2022-03-01,Other,From dad,500.0,Income
-2022-03-01,Food,Snacks,67.0,Expense
+2022-02-28,Other,From kumara,200.0,Income
 2022-03-01,Other,From vicky,100.0,Income
-2022-03-01,Transportation,Metro,30.0,Expense
+2022-03-01,Food,Snacks,67.0,Expense
 2022-03-01,Food,Dinner,78.0,Expense
+2022-03-01,Transportation,Metro,30.0,Expense
+2022-03-01,Other,From dad,500.0,Income
 2022-03-02,Other,To lended people,300.0,Expense
 2022-03-02,Food,Brownie,50.0,Expense
 2022-03-04,Food,Lunch with company,155.0,Expense
@@ -346,8 +346,8 @@ Date,Category,Description,Amount,Type
 2022-07-28,Food,Snacks,120.0,Expense
 2022-07-31,Food,Zomato,350.0,Expense
 2022-08-01,Food,Breakfast,75.0,Expense
-2022-08-03,Salary,Salary,9000.0,Income
 2022-08-03,Household,Rent,4900.0,Expense
+2022-08-03,Salary,Salary,9000.0,Income
 2022-08-06,Social Life,Movie,380.0,Expense
 2022-08-09,Food,Lunch,150.0,Expense
 2022-08-12,Transportation,Train ticket booking,950.0,Expense
