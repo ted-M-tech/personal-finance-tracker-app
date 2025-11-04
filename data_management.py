@@ -202,16 +202,21 @@ class DataVisualizer(DataManagement):
         plt.tight_layout()
         plt.show()
 
-class BudgetManager:
-    def __init__(self, filename="category_budgets.csv"):
-        self.filename = filename
-        if os.path.exists(self.filename):
-            df = pd.read_csv(self.filename)
-            if "Category" in df and "Budget" in df:
-                self.budgets = dict(zip(df["Category"], df["Budget"]))
+class BudgetManager(DataManagement):
+    def __init__(self, transactions_file="transactions.csv", budget_file="category_budgets.csv"):
+        super().__init__(transactions_file)        
+        self.budget_file = budget_file
+        if os.path.exists(self.budget_file):
+            self.budgets = pd.read_csv(self.file_name)
+            print(f"Loaded transactions from {self.file_name}")
+        else:
+            df_empty = pd.DataFrame(columns=["Category", "Budget"])
+            df_empty.to_csv(self.budget_file, index=False)
+            print("Initialized empty budgets")
 
-    def set_budgets(self, categories):
-        print()
+    def set_budgets(self):
+        print("\n--- Set budget for a single month and category ---")      
+        categories = self.transactions[self.transactions["Type"] != "Income"]["Category"].unique()
         budgets = {}
         for cat in categories:
             while True:
@@ -221,39 +226,51 @@ class BudgetManager:
                     break
                 except ValueError:
                     print("Please enter a valid number!")
-        print("\nYour budgets have been set:")
-        for cat in categories:
-            print(f"- {cat}: ${budgets[cat]:.2f}")
         self.budgets = budgets
         self.save_budgets()
+        print("\nYour budgets have been set:")
+        for cat in categories:
+            budget = self.budgets[cat]
+            print(f"- {cat} : ${budget:.2f}")
+        
 
     def save_budgets(self):
         df = pd.DataFrame([
             {'Category': cat, 'Budget': budget}
             for cat, budget in self.budgets.items()
         ])
-        df.to_csv(self.filename, index=False)
-        print(f"Budgets saved to {self.filename}")
+        df.to_csv(self.budget_file, index=False)
+        print(f"Budgets saved to {self.budget_file}")
  
-    def check_budget_status(self, actual_spending):
+    def check_budget_status(self):
+        month = str(input("Enter month to check (yyyy-mm): "))
+        df_month = self.transactions[self.transactions['Date'].dt.strftime('%Y-%m') == month]
+        actual_spending = df_month.groupby("Category")["Amount"].sum().to_dict()
         print("\n----- Budget Status -----")
         alerts_cat = []
         warning_cat = []
+        over_count = 0
+        categories = list(self.budgets.keys())
         for cat, budget in self.budgets.items():
+            budget = self.budgets[cat].get(month, 0)
             spent = actual_spending.get(cat, 0)
             status = f"- {cat}: ${spent:.2f} / ${budget:.2f}"
             if spent > budget:
                 status += "   (Alert: Exceeded budget!)"
                 alerts_cat.append(cat.lower())
+                over_count += 1
             elif spent >= 0.9 * budget:
                 status += "   (Warning: Close to budget!)"
                 warning_cat.append(cat.lower())
             print(status)
-       
+        #Suggestions
         print("\nSuggestions:")
-        if alerts_cat:
-            print(f"- Consider reducing {alerts_cat} spending or adjusting the budget.")
-        if warning_cat:
-            print(f"- Monitor {warning_cat} spending closely to avoid exceeding the budget.")
-        if not (alerts_cat or warning_cat):
-            print("- You are within budget for other categories. Keep up the good work!")
+        if over_count == len(categories):
+            print("You should review your budgets for all categories.")
+        else:
+            if alerts_cat:
+                print(f"- Consider reducing spending or adjusting the budget for: {', '.join(alerts_cat)}.")
+            if warning_cat:
+                print(f"- Monitor your spending for: {', '.join(warning_cat)} to avoid exceeding the budget.")
+            if not (alerts_cat or warning_cat):
+                print("- You are within budget for other categories. Keep up the good work!")
