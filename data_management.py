@@ -255,5 +255,5 @@ class BudgetManager:
             print(f"- Consider reducing {alerts_cat} spending or adjusting the budget.")
         if warning_cat:
             print(f"- Monitor {warning_cat} spending closely to avoid exceeding the budget.")
-        if not alerts_cat or not warning_cat:
+        if not (alerts_cat or warning_cat):
             print("- You are within budget for other categories. Keep up the good work!")
