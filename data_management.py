@@ -234,3 +234,26 @@ class BudgetManager:
         ])
         df.to_csv(self.filename, index=False)
         print(f"Budgets saved to {self.filename}")
+ 
+    def check_budget_status(self, actual_spending):
+        print("\n----- Budget Status -----")
+        alerts_cat = []
+        warning_cat = []
+        for cat, budget in self.budgets.items():
+            spent = actual_spending.get(cat, 0)
+            status = f"- {cat}: ${spent:.2f} / ${budget:.2f}"
+            if spent > budget:
+                status += "   (Alert: Exceeded budget!)"
+                alerts_cat.append(cat.lower())
+            elif spent >= 0.9 * budget:
+                status += "   (Warning: Close to budget!)"
+                warning_cat.append(cat.lower())
+            print(status)
+       
+        print("\nSuggestions:")
+        if alerts_cat:
+            print(f"- Consider reducing {alerts_cat} spending or adjusting the budget.")
+        if warning_cat:
+            print(f"- Monitor {warning_cat} spending closely to avoid exceeding the budget.")
+        if not (alerts_cat and warning_cat):
+            print("- You are within budget for all categories. Keep up the good work!")
